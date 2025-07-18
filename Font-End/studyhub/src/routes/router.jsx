@@ -6,12 +6,11 @@ import {
 
 import MainLayout from "../layouts/MainLayout";
 import AuthLayout from "../layouts/AuthLayout";
-import ProtectedRoute from "./ProtectedRoute";
 import Register from "../pages/RegisterPage";
 import Home from "../pages/HomePage";
 import Login from "../pages/LoginPage";
 import NotFound from "../pages/NotFoundPage";
-import Dashboard from "../pages/DashboardPage";
+import Dashboard from "../features/dashboard/Dashboard";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,17 +26,13 @@ const router = createBrowserRouter(
         <Route
           path="/"
           element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
+            <Home />
           }
         />
         <Route
           path="/dashboard"
           element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
+            <Dashboard />
           }
         />
       </Route>
